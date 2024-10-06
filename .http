@@ -1,0 +1,24 @@
+# POST http://localhost:3000/user
+# Content-Type: application/json
+
+# {
+#   "fullName": "Luiz Fernando Pinagé Coutinho",
+#   "password": "root",
+#   "email": "email@hotmail.com",
+#   "cpf": "00000000000",
+#   "isActive": true
+# }
+
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "email@hotmail.com",
+  "password": "root"
+}
+
+
+
+# GET http://localhost:3000/user
+# Content-Type: application/json
