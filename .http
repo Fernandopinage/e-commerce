@@ -10,14 +10,27 @@
 # }
 
 
-POST http://localhost:3000/login
+# POST http://localhost:3000/login
+# Content-Type: application/json
+
+# {
+#   "email": "email@hotmail.com",
+#   "password": "root"
+# }
+
+
+POST http://localhost:3000/category
 Content-Type: application/json
 
 {
-  "email": "email@hotmail.com",
-  "password": "root"
+  
+  "name": "Sample Category",
+  "description": "This is a sample category description.",
+  "parentCategoryId": "12345", 
+  "status": "active",  
+  "createdAt": "2024-10-09T10:00:00Z", 
+  "updatedAt": "2024-10-09T10:00:00Z"  
 }
-
 
 
 # GET http://localhost:3000/user

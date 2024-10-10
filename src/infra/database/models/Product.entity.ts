@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+
+import { Category } from './Category.entity';
 
 @Entity('product')
 export class Product {
@@ -45,4 +47,8 @@ export class Product {
     default: () => 'CURRENT_TIMESTAMP'
   })
   createdAt: Date;
+
+  @ManyToOne(() => Category)
+  @JoinColumn({ name: 'category_id' })
+  category: Category;
 }

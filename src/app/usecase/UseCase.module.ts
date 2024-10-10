@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import AuthenticationUseCase from './authentication/AuthenticationUseCase';
+import { CreateCategoryUseCase } from './category/create-category/CreateCategoryUseCase';
 import CreateUserUseCase from './user/created-user/CreateUserUseCase';
 import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
 
@@ -17,7 +18,7 @@ import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
       signOptions: { expiresIn: '60s' }
     })
   ],
-  providers: [CreateUserUseCase, AuthenticationUseCase],
-  exports: [CreateUserUseCase, AuthenticationUseCase]
+  providers: [CreateUserUseCase, AuthenticationUseCase, CreateCategoryUseCase],
+  exports: [CreateUserUseCase, AuthenticationUseCase, CreateCategoryUseCase]
 })
 export class UseCaseModule {}
