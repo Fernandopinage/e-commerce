@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 import AuthenticationUseCase from './authentication/AuthenticationUseCase';
 import CreateUserUseCase from './user/created-user/CreateUserUseCase';
@@ -11,7 +13,7 @@ import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
     RepositoryModule,
     PassportModule,
     JwtModule.register({
-      secret: 'jwtConstants.secret',
+      secret: process.env.JWT_SECRET,
       signOptions: { expiresIn: '60s' }
     })
   ],
