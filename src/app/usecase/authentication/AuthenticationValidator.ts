@@ -1,7 +1,7 @@
-import { CreateCategoryRequest } from './CreateCategoryRequest';
-import BaseValidatorAuthTemplate from '../../share/validator/BaseValidatorTemplate';
+import { AuthenticationRequest } from './AuthenticationDto';
+import BaseValidatorAuthTemplate from '../share/validator/BaseValidatorTemplate';
 
-export class CreateCategoryValidator extends BaseValidatorAuthTemplate<CreateCategoryRequest, void> {
+export class AuthenticationValidator extends BaseValidatorAuthTemplate<AuthenticationRequest, void> {
   constructor() {
     super();
   }

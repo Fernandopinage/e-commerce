@@ -1,18 +1,20 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Scope } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { AuthenticationPayload, AuthenticationRequest, AuthenticationResponse } from './AuthenticationDto';
+import { AuthenticationValidator } from './AuthenticationValidator';
 import { BaseUseCaseTemplate } from '../share/baseusecase/BaseUseCaseTemplate';
 import StatusCode from '../share/status/StatusCode';
 import UserRepository from '@//infra/repositories/UserRepository';
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export default class AuthenticationUseCase extends BaseUseCaseTemplate<AuthenticationRequest, AuthenticationResponse> {
   constructor(
     private userRepository: UserRepository,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    validator: AuthenticationValidator
   ) {
-    super();
+    super([userRepository], validator);
   }
   protected async process(): Promise<void> {
     const user = await this.userRepository.getBy({

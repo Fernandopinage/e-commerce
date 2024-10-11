@@ -3,16 +3,19 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { DeepPartial, FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { Transactional } from 'typeorm-transactional';
 
+import { BaseRepository } from './shared/BaseRepository';
 import { User } from '../database/models/User.entity';
 
 @Injectable({
   scope: Scope.REQUEST
 })
-export default class UserRepository {
+export default class UserRepository extends BaseRepository {
   constructor(
     @InjectRepository(User)
     private readonly companyRepository: Repository<User>
-  ) {}
+  ) {
+    super();
+  }
 
   @Transactional()
   async upsert(data: Partial<User> | DeepPartial<User>): Promise<User> {

@@ -5,20 +5,34 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import AuthenticationUseCase from './authentication/AuthenticationUseCase';
+import { AuthenticationValidator } from './authentication/AuthenticationValidator';
 import { CreateCategoryUseCase } from './category/create-category/CreateCategoryUseCase';
+import { CreateCategoryValidator } from './category/create-category/CreateCategoryValidator';
 import CreateUserUseCase from './user/created-user/CreateUserUseCase';
 import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
 
 @Module({
   imports: [
     RepositoryModule,
-    PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET,
       signOptions: { expiresIn: '60s' }
-    })
+    }),
+    PassportModule
   ],
-  providers: [CreateUserUseCase, AuthenticationUseCase, CreateCategoryUseCase],
-  exports: [CreateUserUseCase, AuthenticationUseCase, CreateCategoryUseCase]
+  providers: [
+    CreateUserUseCase,
+    AuthenticationUseCase,
+    AuthenticationValidator,
+    CreateCategoryUseCase,
+    CreateCategoryValidator
+  ],
+  exports: [
+    CreateUserUseCase,
+    AuthenticationUseCase,
+    AuthenticationValidator,
+    CreateCategoryUseCase,
+    CreateCategoryValidator
+  ]
 })
 export class UseCaseModule {}
