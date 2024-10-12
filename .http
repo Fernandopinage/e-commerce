@@ -23,15 +23,11 @@ POST http://localhost:3000/category
 Content-Type: application/json
 
 {
-  
-  "name": "Sample Category",
-  "description": "This is a sample category description.",
-  "parentCategoryId": "12345", 
-  "status": "active",  
-  "createdAt": "2024-10-09T10:00:00Z", 
-  "updatedAt": "2024-10-09T10:00:00Z"  
+  "name": "Calças Femininas",
+  "description": "Calças para treino feminino",
+  "parentCategoryId": null,
+  "status": "ativo"
 }
-
-
+ 
 # GET http://localhost:3000/user
 # Content-Type: application/json

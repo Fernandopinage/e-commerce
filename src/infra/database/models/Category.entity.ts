@@ -11,8 +11,8 @@ export class Category {
   @Column({ type: 'varchar', length: 255, nullable: false })
   description: string;
 
-  @Column({ name: 'parent_category_id', type: 'varchar', length: 255, nullable: false })
-  parentCategoryId: string;
+  @Column({ name: 'parent_category_id', type: 'varchar', length: 255, nullable: true })
+  parentCategoryId?: string;
 
   @Column({ type: 'varchar', length: 11, nullable: false })
   status: string;
