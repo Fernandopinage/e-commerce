@@ -21,6 +21,7 @@
 
 POST http://localhost:3000/category
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlODlhMzA3LTE4N2MtNDZjZS1iNjlkLWRlYWY0OTRjYzg4OSIsImZ1bGxOYW1lIjoiTHVpeiBGZXJuYW5kbyBQaW5hZ8OpIENvdXRpbmhvIiwiZW1haWwiOiJlbWFpbEBob3RtYWlsLmNvbSIsImlhdCI6MTcyODc4MzI3NCwiZXhwIjoxNzI4NzgzMzM0fQ.i-QH5vP_PahHVFF9WOPilqXR7vS8xRiAQa8N57PW5oY
 
 {
   "name": "Calças Femininas",
@@ -28,6 +29,11 @@ Content-Type: application/json
   "parentCategoryId": null,
   "status": "ativo"
 }
- 
+
+
+# GET http://localhost:3000/category?page=1&perPage=10
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlODlhMzA3LTE4N2MtNDZjZS1iNjlkLWRlYWY0OTRjYzg4OSIsImZ1bGxOYW1lIjoiTHVpeiBGZXJuYW5kbyBQaW5hZ8OpIENvdXRpbmhvIiwiZW1haWwiOiJlbWFpbEBob3RtYWlsLmNvbSIsImlhdCI6MTcyODc4MzI3NCwiZXhwIjoxNzI4NzgzMzM0fQ.i-QH5vP_PahHVFF9WOPilqXR7vS8xRiAQa8N57PW5oY
+
 # GET http://localhost:3000/user
 # Content-Type: application/json

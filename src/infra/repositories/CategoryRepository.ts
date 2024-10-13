@@ -28,7 +28,7 @@ export default class CategoryRepository extends BaseRepository {
     return await this.categoryRepository.findOne(data);
   }
 
-  async findAll(optional?: FindManyOptions<Category>): Promise<[Category[], number]> {
+  async list(optional?: FindManyOptions<Category>): Promise<[Category[], number]> {
     return await this.categoryRepository.findAndCount(optional);
   }
 }

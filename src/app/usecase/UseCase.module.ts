@@ -8,6 +8,8 @@ import AuthenticationUseCase from './authentication/AuthenticationUseCase';
 import { AuthenticationValidator } from './authentication/AuthenticationValidator';
 import { CreateCategoryUseCase } from './category/create-category/CreateCategoryUseCase';
 import { CreateCategoryValidator } from './category/create-category/CreateCategoryValidator';
+import ListCategoryUseCase from './category/list-category/ListCategoryUseCase';
+import { ListCategoryValidator } from './category/list-category/ListCategoryValidator';
 import CreateUserUseCase from './user/created-user/CreateUserUseCase';
 import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
 
@@ -25,14 +27,18 @@ import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
     AuthenticationUseCase,
     AuthenticationValidator,
     CreateCategoryUseCase,
-    CreateCategoryValidator
+    CreateCategoryValidator,
+    ListCategoryValidator,
+    ListCategoryUseCase
   ],
   exports: [
     CreateUserUseCase,
     AuthenticationUseCase,
     AuthenticationValidator,
     CreateCategoryUseCase,
-    CreateCategoryValidator
+    CreateCategoryValidator,
+    ListCategoryValidator,
+    ListCategoryUseCase
   ]
 })
 export class UseCaseModule {}

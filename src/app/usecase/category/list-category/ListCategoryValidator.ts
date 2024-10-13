@@ -1,7 +1,10 @@
-import { CreateCategoryRequest } from './CreateCategoryRequest';
+import { Injectable, Scope } from '@nestjs/common';
+
+import { ListCategoryRequest } from './ListCategoryDto';
 import BaseValidatorAuthTemplate from '../../share/validator/BaseValidatorTemplate';
 
-export class CreateCategoryValidator extends BaseValidatorAuthTemplate<CreateCategoryRequest, void> {
+@Injectable({ scope: Scope.REQUEST })
+export class ListCategoryValidator extends BaseValidatorAuthTemplate<ListCategoryRequest, void> {
   constructor() {
     super();
   }

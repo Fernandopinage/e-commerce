@@ -15,11 +15,12 @@ export class CreateCategoryUseCase extends BaseUseCaseTemplate<CreateCategoryReq
     super([categoryRepository], validator);
   }
   protected async process(): Promise<void> {
-    await this.categoryRepository.upsert(this.body);
-    this.setResponseStatusCode(StatusCode.ok);
     return;
   }
   protected async processTransactions(): Promise<void> {
+    console.log('>>>>', this.body);
+    await this.categoryRepository.upsert(this.body);
+    this.setResponseStatusCode(StatusCode.ok);
     return;
   }
 }
