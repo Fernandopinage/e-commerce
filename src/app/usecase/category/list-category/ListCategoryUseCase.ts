@@ -18,7 +18,7 @@ export default class ListCategoryUseCase extends BaseGetUseCaseTempate<ListCateg
       skip: Number(this.queryParams.page),
       take: Number(this.queryParams.perPage)
     });
-    throw 'teste';
+
     this.setResponseBody({
       list,
       total
