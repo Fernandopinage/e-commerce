@@ -1,5 +1,7 @@
+import { Logger } from '@nestjs/common';
 import { EntityManager, QueryRunner } from 'typeorm';
 
+import { ConsoleLogContextsEnum } from '../enum/ConsoleLogContextsEnum';
 import { LanguageEnum } from '../enum/LanguageEnum';
 import CommonErrors from '../erros/CommonErrors';
 import ManagerErrors from '../erros/ManagerErrors';
@@ -66,7 +68,7 @@ export abstract class BaseUseCaseTemplate<TBodyRequest, TResponse = void, TOutpu
       }
 
       // Log do erro (comentado para exemplo)
-      // Logger.error(error, error, ConsoleLogContextsEnum.usecase);
+      Logger.error(error, error, ConsoleLogContextsEnum.usecase);
 
       return {
         statusCode: StatusCode.serveError,

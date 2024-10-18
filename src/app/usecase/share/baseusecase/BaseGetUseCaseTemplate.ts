@@ -1,5 +1,6 @@
-import { HttpStatus } from '@nestjs/common';
+import { HttpStatus, Logger } from '@nestjs/common';
 
+import { ConsoleLogContextsEnum } from '../enum/ConsoleLogContextsEnum';
 import { LanguageEnum } from '../enum/LanguageEnum';
 import CommonErrors from '../erros/CommonErrors';
 import ManagerErrors from '../erros/ManagerErrors';
@@ -51,7 +52,7 @@ export abstract class BaseGetUseCaseTempate<TQueryParam, TResponse = void, TOutp
         statusCode: HttpStatus.OK
       };
     } catch (error) {
-      //   Logger.error(error, error, ConsoleLogContextsEnum.usecase);
+      Logger.error(error, error, ConsoleLogContextsEnum.usecase);
       return {
         statusCode: StatusCode.serveError,
         body: [ManagerErrors.translate(LanguageEnum.ptbr, CommonErrors.serverError), error]

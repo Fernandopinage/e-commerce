@@ -31,7 +31,7 @@ export class CategoryController {
       headers,
       loggedUser: req.loggedUser
     });
-    console.log('>>>>', response);
+
     res.status(response.statusCode).json(response.body);
   }
 

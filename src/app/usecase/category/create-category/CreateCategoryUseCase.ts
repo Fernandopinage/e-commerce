@@ -18,7 +18,6 @@ export class CreateCategoryUseCase extends BaseUseCaseTemplate<CreateCategoryReq
     return;
   }
   protected async processTransactions(): Promise<void> {
-    console.log('>>>>', this.body);
     await this.categoryRepository.upsert(this.body);
     this.setResponseStatusCode(StatusCode.ok);
     return;

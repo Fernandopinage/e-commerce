@@ -30,7 +30,7 @@ export default class AuthenticationUseCase extends BaseUseCaseTemplate<Authentic
         fullName,
         email
       });
-      console.log('>>>>>', body);
+
       this.setResponseBody(body);
       this.setResponseStatusCode(StatusCode.ok);
       return;
