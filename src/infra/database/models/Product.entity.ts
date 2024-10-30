@@ -1,38 +1,21 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 import { Category } from './Category.entity';
+import { SubCategory } from './SubCategory.entity';
 
 @Entity('product')
 export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column()
   name: string;
 
-  @Column({ type: 'text', nullable: true })
-  description: string;
-
-  @Column({ type: 'decimal', precision: 10, scale: 2 })
+  @Column('decimal', { precision: 10, scale: 2 })
   price: number;
 
-  @Column({ type: 'int' })
-  quantity: number;
-
-  @Column({ type: 'varchar', length: 100, unique: true })
-  sku: string;
-
-  @Column({ type: 'decimal', precision: 5, scale: 2, nullable: true })
-  weight: number;
-
-  @Column({ type: 'varchar', length: 100, nullable: true })
-  dimensions: string;
-
-  @Column({ type: 'text', nullable: true })
-  imageUrl: string;
-
-  @Column({ type: 'boolean', default: true })
-  status: boolean;
+  @Column({ nullable: true })
+  description: string;
 
   @CreateDateColumn({
     name: 'updated_at',
@@ -48,7 +31,9 @@ export class Product {
   })
   createdAt: Date;
 
-  @ManyToOne(() => Category)
-  @JoinColumn({ name: 'category_id' })
+  @ManyToOne(() => Category, (category) => category.products, { onDelete: 'SET NULL' })
   category: Category;
+
+  @ManyToOne(() => SubCategory, (subCategory) => subCategory.products, { onDelete: 'SET NULL' })
+  subCategory: SubCategory;
 }

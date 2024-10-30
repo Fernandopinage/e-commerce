@@ -10,6 +10,10 @@ import { CreateCategoryUseCase } from './category/create-category/CreateCategory
 import { CreateCategoryValidator } from './category/create-category/CreateCategoryValidator';
 import ListCategoryUseCase from './category/list-category/ListCategoryUseCase';
 import { ListCategoryValidator } from './category/list-category/ListCategoryValidator';
+import { CreateProductUseCase } from './product/create-product/CreateProductUseCase';
+import { CreateProductValidator } from './product/create-product/CreateProductValidator';
+import { CreateSubCategoryUseCase } from './sub-category/create-sub-category/CreateSubCategoryUseCase';
+import { CreateSubCategoryValidator } from './sub-category/create-sub-category/CreateSubCategoryValidator';
 import CreateUserUseCase from './user/created-user/CreateUserUseCase';
 import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
 
@@ -29,7 +33,11 @@ import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
     CreateCategoryUseCase,
     CreateCategoryValidator,
     ListCategoryValidator,
-    ListCategoryUseCase
+    ListCategoryUseCase,
+    CreateSubCategoryValidator,
+    CreateSubCategoryUseCase,
+    CreateProductUseCase,
+    CreateProductValidator
   ],
   exports: [
     CreateUserUseCase,
@@ -38,7 +46,11 @@ import { RepositoryModule } from '@//infra/repositories/RepositoryModule';
     CreateCategoryUseCase,
     CreateCategoryValidator,
     ListCategoryValidator,
-    ListCategoryUseCase
+    ListCategoryUseCase,
+    CreateSubCategoryValidator,
+    CreateSubCategoryUseCase,
+    CreateProductUseCase,
+    CreateProductValidator
   ]
 })
 export class UseCaseModule {}

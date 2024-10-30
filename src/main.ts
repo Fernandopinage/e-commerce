@@ -10,7 +10,7 @@ async function bootstrap() {
     logger: new LoggerAdapter()
   });
   const documentFactory = () => SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup('api', app, documentFactory);
+  SwaggerModule.setup('docs', app, documentFactory);
   await app.listen(3000);
 }
 bootstrap();

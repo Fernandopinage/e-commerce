@@ -19,16 +19,217 @@
 # }
 
 
-POST http://localhost:3000/category
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlODlhMzA3LTE4N2MtNDZjZS1iNjlkLWRlYWY0OTRjYzg4OSIsImZ1bGxOYW1lIjoiTHVpeiBGZXJuYW5kbyBQaW5hZ8OpIENvdXRpbmhvIiwiZW1haWwiOiJlbWFpbEBob3RtYWlsLmNvbSIsImlhdCI6MTcyODc4MzI3NCwiZXhwIjoxNzI4NzgzMzM0fQ.i-QH5vP_PahHVFF9WOPilqXR7vS8xRiAQa8N57PW5oY
+# POST http://localhost:3000/category
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGYzMWQ4LTcwMmQtNDU4Yi04NTI5LTQ4YTM4YjE4MmJhYyIsImZ1bGxOYW1lIjoiTHVpeiBGZXJuYW5kbyBQaW5hZ8OpIENvdXRpbmhvIiwiZW1haWwiOiJlbWFpbEBob3RtYWlsLmNvbSIsImlhdCI6MTczMDE2MzI2NywiZXhwIjoxNzMwMTYzMzI3fQ._642xmEYtbq90eEEHCkdEnTweYeZjfQtUlmleeOqdII
 
-{
-  "name": "Calças Femininas",
-  "description": "Calças para treino feminino",
-  "parentCategoryId": null,
-  "status": "ativo"
-}
+# [
+#   {
+#     "name": "Roupas"
+#   },
+#   {
+#     "name": "Calçados"
+#   },
+#   {
+#     "name": "Suplementos"
+#   },
+#   {
+#     "name": "Acessórios"
+#   },
+#   {
+#     "name": "Equipamentos de Treino"
+#   },
+#   {
+#     "name": "Bolsas de Academia"
+#   },
+#   {
+#     "name": "Recuperação e Bem-Estar"
+#   },
+#   {
+#     "name": "Esportes ao Ar Livre"
+#   },
+#   {
+#     "name": "Dispositivos Inteligentes"
+#   },
+#   {
+#     "name": "Yoga e Pilates"
+#   }
+# ]
+
+POST http://localhost:3000/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGYzMWQ4LTcwMmQtNDU4Yi04NTI5LTQ4YTM4YjE4MmJhYyIsImZ1bGxOYW1lIjoiTHVpeiBGZXJuYW5kbyBQaW5hZ8OpIENvdXRpbmhvIiwiZW1haWwiOiJlbWFpbEBob3RtYWlsLmNvbSIsImlhdCI6MTczMDI1MTE5NiwiZXhwIjoxNzMwMjUxMjU2fQ.d5rheF2ONTYICXnDtELCgVdOWGiycVAj5kKcdg1bvWc
+
+[
+  {
+    "id": "1d7f9e1b-5e9c-42c5-bb62-4b7f3f958f57",
+    "name": "Camiseta Básica",
+    "price": 49.9,
+    "description": "Camiseta de algodão confortável para o dia a dia.",
+    "categoryId": "9eb70ced-1846-4c4f-8fc9-c86b5b09a76f",
+    "subCategoryId": "9eb70ced-1846-4c4f-8fc9-c86b5b09a76f",
+    "created_at": "2024-10-28T15:30:00.000Z",
+    "updated_at": "2024-10-29T10:00:00.000Z"
+  },
+  {
+    "id": "3e2a8d67-9044-49fa-9f35-12b04c91a2b3",
+    "name": "Calça Jeans Slim Fit",
+    "price": 129.9,
+    "description": "Calça jeans com corte slim para um visual moderno.",
+    "categoryId": "9eb70ced-1846-4c4f-8fc9-c86b5b09a76f",
+    "subCategoryId": "9eb70ced-1846-4c4f-8fc9-c86b5b09a76f",
+    "created_at": "2024-10-28T18:00:00.000Z",
+    "updated_at": "2024-10-29T11:15:00.000Z"
+  },
+  {
+    "id": "6f4c85f1-9ebd-4a8e-b9d2-e8c4e3c3fd45",
+    "name": "Tênis de Corrida Ultra",
+    "price": 399.9,
+    "description": "Tênis leve e resistente, ideal para maratonas.",
+    "categoryId": "aa8543ce-5b43-463e-a2fd-5555933e5f79",
+    "subCategoryId": "aa8543ce-5b43-463e-a2fd-5555933e5f79",
+    "created_at": "2024-10-28T16:00:00.000Z",
+    "updated_at": "2024-10-29T09:45:00.000Z"
+  },
+  {
+    "id": "4f8e95d9-ec4d-4f75-97ea-4b5c4f5a7e83",
+    "name": "Luvas de Treino Profissional",
+    "price": 89.9,
+    "description": "Luvas com proteção reforçada para treinos intensos.",
+    "categoryId": "d7140444-a8f8-4bc6-81df-0cc10545c75a",
+    "subCategoryId": "d7140444-a8f8-4bc6-81df-0cc10545c75a",
+    "created_at": "2024-10-28T17:30:00.000Z",
+    "updated_at": "2024-10-29T12:00:00.000Z"
+  },
+  {
+    "id": "9a7e48f2-5f3b-4e8c-8f9d-1b3f4e7c81a5",
+    "name": "Relógio Fitness Smart",
+    "price": 599.9,
+    "description": "Relógio com monitoramento cardíaco e GPS integrado.",
+    "categoryId": "43d3beab-bfcb-4afa-a9b4-dca86699721a",
+    "subCategoryId": "43d3beab-bfcb-4afa-a9b4-dca86699721a",
+    "created_at": "2024-10-28T10:30:00.000Z",
+    "updated_at": "2024-10-29T14:30:00.000Z"
+  },
+  {
+    "id": "8e3c74f1-7f4a-4b7e-b8d4-6f5c8f7c1a82",
+    "name": "Fones de Ouvido Bluetooth",
+    "price": 249.9,
+    "description": "Fones de ouvido com cancelamento de ruído e conexão sem fio.",
+    "categoryId": "43d3beab-bfcb-4afa-a9b4-dca86699721a",
+    "subCategoryId": "43d3beab-bfcb-4afa-a9b4-dca86699721a",
+    "created_at": "2024-10-28T10:00:00.000Z",
+    "updated_at": "2024-10-29T15:00:00.000Z"
+  },
+  {
+    "id": "59c3a634-bec9-48a8-93a1-541a5b2dec76",
+    "name": "Acessórios para Yoga",
+    "price": 79.9,
+    "description": "Kit completo para prática de yoga, incluindo blocos e faixas.",
+    "categoryId": "59c3a634-bec9-48a8-93a1-541a5b2dec76",
+    "subCategoryId": "59c3a634-bec9-48a8-93a1-541a5b2dec76",
+    "created_at": "2024-10-28T13:00:00.000Z",
+    "updated_at": "2024-10-29T16:30:00.000Z"
+  },
+  {
+    "id": "72b0843e-5bee-4dfb-83e5-4d5e3cff9cbc",
+    "name": "Barraca de Camping",
+    "price": 999.9,
+    "description": "Barraca impermeável para até quatro pessoas.",
+    "categoryId": "72b0843e-5bee-4dfb-83e5-4d5e3cff9cbc",
+    "subCategoryId": "72b0843e-5bee-4dfb-83e5-4d5e3cff9cbc",
+    "created_at": "2024-10-28T14:00:00.000Z",
+    "updated_at": "2024-10-29T18:00:00.000Z"
+  }
+]
+
+
+# POST http://localhost:3000/sub-category
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGYzMWQ4LTcwMmQtNDU4Yi04NTI5LTQ4YTM4YjE4MmJhYyIsImZ1bGxOYW1lIjoiTHVpeiBGZXJuYW5kbyBQaW5hZ8OpIENvdXRpbmhvIiwiZW1haWwiOiJlbWFpbEBob3RtYWlsLmNvbSIsImlhdCI6MTczMDI1MTE5NiwiZXhwIjoxNzMwMjUxMjU2fQ.d5rheF2ONTYICXnDtELCgVdOWGiycVAj5kKcdg1bvWc
+
+# [
+#   {
+#     "name": "Camisetas",
+#     "categoryId": "9eb70ced-1846-4c4f-8fc9-c86b5b09a76f"
+#   },
+#   {
+#     "name": "Calças",
+#     "categoryId": "9eb70ced-1846-4c4f-8fc9-c86b5b09a76f"
+#   },
+#   {
+#     "name": "Tênis de Corrida",
+#     "categoryId": "aa8543ce-5b43-463e-a2fd-5555933e5f79"
+#   },
+#   {
+#     "name": "Botas",
+#     "categoryId": "aa8543ce-5b43-463e-a2fd-5555933e5f79"
+#   },
+#   {
+#     "name": "Proteínas",
+#     "categoryId": "0e1cda7e-deed-4f40-8aac-0ac730e2ad6a"
+#   },
+#   {
+#     "name": "Vitaminas",
+#     "categoryId": "0e1cda7e-deed-4f40-8aac-0ac730e2ad6a"
+#   },
+#   {
+#     "name": "Luvas de Treino",
+#     "categoryId": "d7140444-a8f8-4bc6-81df-0cc10545c75a"
+#   },
+#   {
+#     "name": "Cintos de Academia",
+#     "categoryId": "d7140444-a8f8-4bc6-81df-0cc10545c75a"
+#   },
+#   {
+#     "name": "Halteres",
+#     "categoryId": "d7140444-a8f8-4bc6-81df-0cc10545c75a"
+#   },
+#   {
+#     "name": "Barras de Levantamento",
+#     "categoryId": "d7140444-a8f8-4bc6-81df-0cc10545c75a"
+#   },
+#   {
+#     "name": "Mochilas",
+#     "categoryId": "da05d1af-06e7-4079-95db-97e591cadb8e"
+#   },
+#   {
+#     "name": "Sacos de Ginástica",
+#     "categoryId": "da05d1af-06e7-4079-95db-97e591cadb8e"
+#   },
+#   {
+#     "name": "Massagem",
+#     "categoryId": "adec2420-4fd5-4d2e-a2b6-9fff7804868e"
+#   },
+#   {
+#     "name": "Alongamento",
+#     "categoryId": "adec2420-4fd5-4d2e-a2b6-9fff7804868e"
+#   },
+#   {
+#     "name": "Barracas",
+#     "categoryId": "72b0843e-5bee-4dfb-83e5-4d5e3cff9cbc"
+#   },
+#   {
+#     "name": "Camas Infláveis",
+#     "categoryId": "72b0843e-5bee-4dfb-83e5-4d5e3cff9cbc"
+#   },
+#   {
+#     "name": "Relógios de Fitness",
+#     "categoryId": "43d3beab-bfcb-4afa-a9b4-dca86699721a"
+#   },
+#   {
+#     "name": "Fones de Ouvido",
+#     "categoryId": "43d3beab-bfcb-4afa-a9b4-dca86699721a"
+#   },
+#   {
+#     "name": "Acessórios para Yoga",
+#     "categoryId": "59c3a634-bec9-48a8-93a1-541a5b2dec76"
+#   },
+#   {
+#     "name": "Colchonetes",
+#     "categoryId": "59c3a634-bec9-48a8-93a1-541a5b2dec76"
+#   }
+# ]
 
 
 # GET http://localhost:3000/category?page=1&perPage=10

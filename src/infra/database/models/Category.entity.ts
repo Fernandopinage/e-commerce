@@ -1,21 +1,14 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Product } from './Product.entity';
 
 @Entity('category')
 export class Category {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: false })
+  @Column({ unique: true })
   name: string;
-
-  @Column({ type: 'varchar', length: 255, nullable: false })
-  description: string;
-
-  @Column({ name: 'parent_category_id', type: 'varchar', length: 255, nullable: true })
-  parentCategoryId?: string;
-
-  @Column({ type: 'varchar', length: 11, nullable: false })
-  status: string;
 
   @CreateDateColumn({
     name: 'updated_at',
@@ -30,4 +23,7 @@ export class Category {
     default: () => 'CURRENT_TIMESTAMP'
   })
   createdAt: Date;
+
+  @OneToMany(() => Product, (product) => product.category)
+  products: Product[];
 }
